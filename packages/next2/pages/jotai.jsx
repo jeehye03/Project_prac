@@ -15,17 +15,19 @@ const NameField = () => {
 
 const Item = ({ itemAtom }) => {
     const [{ name }] = useAtom(itemAtom);
-    const [selected, setSelected] = useAtom(
+    const [selected, setSelected] = useAtom( 
         useMemo(
-            () =>
+            () => // 메모이제이션 해줄 값
                 atom(
                     (get) => get(selectedAtom) === itemAtom,
                     (_get, set) => set(selectedAtom, itemAtom)
-                ),
-            [itemAtom]
+                ), 
+            [itemAtom] // (의존성 배열)
         )
     );
 
+    // 의존성 배열 안의 값이 업데이트 될 떄만 메모이제이션 해줄 값을 다시 호출해서 메모이제이션 된 값을 반환 
+    // 또는 업데이트 해야하면 업데이트 된 값을 메모이제이션 하여 값을 반환
     return (
         <div
             style={{
@@ -52,8 +54,8 @@ const List = () => {
 
 function Jotai() {
     const [enabled, create] = useAtom(createAtom);
-    const [,del] = useAtom(deleteAtom);
-    
+    const [, del] = useAtom(deleteAtom);
+
 
     return <>
         <h1>jotai test</h1>
@@ -63,7 +65,7 @@ function Jotai() {
         <NameField />
         <Button disabled={!enabled} onClick={create}>추가</Button>
         <Button disabled={!enabled} onClick={del}>삭제</Button>
-       
+
     </>
 }
 

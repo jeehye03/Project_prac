@@ -13,7 +13,7 @@ body {
 }
 
 button {
-    margin:5px;
+    margin-top:5px;
     width:80px;
     height:30px;
     border-radius:5px;

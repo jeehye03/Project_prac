@@ -5,7 +5,7 @@
     "lerna": "^6.0.1"
   },
   "scripts": {
-    "start": "lerna exec --scope @zidol/next2 -- npm start"
+    "start": "npx lerna run --scope next2 --stream dev"
   },
   "workspaces": {
     "packages": [
