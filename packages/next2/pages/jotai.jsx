@@ -2,6 +2,7 @@ import { atom, useAtom } from "jotai";
 import { useMemo } from "react";
 import { createAtom, deleteAtom, filteredNameListAtom, nameAtom, selectedAtom } from "../src/components/atoms";
 import Button from "test2/components/Button";
+import styled from "styled-components";
 
 const NameField = () => {
     const [name, setName] = useAtom(nameAtom);
@@ -65,8 +66,13 @@ function Jotai() {
         <NameField />
         <Button disabled={!enabled} onClick={create}>추가</Button>
         <Button disabled={!enabled} onClick={del}>삭제</Button>
+        <Btn>theme</Btn>
 
     </>
 }
 
 export default Jotai;
+
+const Btn = styled.button`
+background:${props => props.theme.colors.black};
+`;

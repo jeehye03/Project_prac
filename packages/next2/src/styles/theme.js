@@ -1,11 +1,13 @@
 
 
 
-const colors = {
-    black:'1e1f1d'
+ const colors = {
+    black:'gold'
 }
 
 
-const defalutTheme = {
+const theme = {
     colors
 }
+
+export default theme;

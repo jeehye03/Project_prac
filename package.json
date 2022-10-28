@@ -13,6 +13,7 @@
     ]
   },
   "dependencies": {
+    "jotai-tanstack-query": "^0.4.0",
     "next-transpile-modules": "^9.1.0"
   }
 }

@@ -55,3 +55,5 @@ export const createAtom = atom(
         }
     }
   )
+
+  export const dataAtom = atom([]);
